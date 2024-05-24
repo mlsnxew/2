@@ -1,0 +1,282 @@
+/* 全局样式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #eee;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #111;
+    border-bottom: 2px solid #e60012;
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #000;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3 {
+    color: #e60012;
+    text-shadow: 1px 1px 2px #000;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #111;
+    color: #eee;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 2px solid #e60012;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img, .gallery video, .gallery audio {
+    max-width: 100%;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #111;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover, .gallery video:hover, .gallery audio:hover {
+    transform: scale(1.05);
+}
+
+.news-card, .guide-card {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover, .guide-card:hover {
+    background-color: #111;
+    box-shadow: 0 0 15px rgba(230, 0, 18, 0.7);
+}
+
+.character-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.character-card:hover {
+    background-color: #111;
+    box-shadow: 0 0 15px rgba(230, 0, 18, 0.7);
+}
+
+
+#latest-news article, #update-log article, #task-guides article, #game-tips article {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+#latest-news article:last-child, #update-log article:last-child, #task-guides article:last-child, #game-tips article:last-child {
+    border-bottom: none;
+}
+
+#latest-news article.expanded p, #update-log article.expanded p, #task-guides article.expanded p, #game-tips article.expanded p {
+    display: block;
+}
+
+#latest-news article p, #update-log article p, #task-guides article p, #game-tips article p {
+    display: none;
+}
+article {
+    border-bottom: 1px solid #444;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+article:hover {
+    background-color: #444;
+}
+
+article h3 {
+    margin: 0;
+    color: #e60012;
+}
+
+article p {
+    margin-top: 10px;
+}
+
+button {
+    background-color: #e60012;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c30010;
+}
+
+/* 添加一些P5R的特色元素 */
+#logo {
+    width: 200px;
+    margin: 20px auto;
+    display: block;
+}
+
+.persona-theme {
+    background: url('../images/persona-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.shadow-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 加载动画 */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-inner {
+    text-align: center;
+    color: #fff;
+}
+
+.loader-inner .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eee;
+    border-top: 5px solid #e60012;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 返回顶部按钮 */
+#toTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e60012;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#toTopButton:hover {
+    background-color: #c30010;
+    transform: scale(1.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #222;
+    color: #eee;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #777;
+}
+
+span {
+    color: red;
+}

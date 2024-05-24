@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区交流 - P5R Fan Site</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="game.html">游戏介绍</a></li>
+                <li><a href="news.html">新闻更新</a></li>
+                <li><a href="guides.html">攻略指南</a></li>
+                <li><a href="community.html">社区交流</a></li>
+                <li><a href="media.html">多媒体资源</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="forum" class="shadow-box persona-theme">
+            <h2>论坛</h2>
+            <article>
+                <h3>游戏心得交流</h3>
+                <p>玩家们在这里分享自己在游戏中的心得和经验。</p>
+            </article>
+            <article>
+                <h3>角色讨论</h3>
+                <p>讨论游戏中的各种角色，分享他们的背景故事和技能。</p>
+            </article>
+            <article>
+                <h3>攻略分享</h3>
+                <p>发布和分享你的游戏攻略，帮助其他玩家顺利通关。</p>
+            </article>
+        </section>
+        <section id="comments" class="shadow-box">
+            <h2>评论区</h2>
+            <form id="commentForm">
+                <input type="text" id="commenterName" placeholder="你的名字" required>
+                <textarea id="commentText" placeholder="你的评论" required></textarea>
+                <button type="submit">提交评论</button>
+            </form>
+            <div id="commentList">
+                <article>
+                    <h3>玩家A的评论</h3>
+                    <p>游戏非常有趣，剧情扣人心弦，强烈推荐！</p>
+                </article>
+                <article>
+                    <h3>玩家B的评论</h3>
+                    <p>我特别喜欢游戏中的社交系统，让我感觉更贴近角色的生活。</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 P5R Fan Site</p>
+    </footer>
+    <script src="../js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const commentForm = document.getElementById('commentForm');
+            const commentList = document.getElementById('commentList');
+
+            commentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('commenterName').value;
+                const text = document.getElementById('commentText').value;
+
+                const newComment = document.createElement('article');
+                const commentTitle = document.createElement('h3');
+                commentTitle.textContent = `${name}的评论`;
+                const commentBody = document.createElement('p');
+                commentBody.textContent = text;
+
+                newComment.appendChild(commentTitle);
+                newComment.appendChild(commentBody);
+                commentList.appendChild(newComment);
+
+                commentForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
+
